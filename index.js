@@ -9,6 +9,9 @@ const {
 	prefix,
 	token,
 } = require('./auth.json');
+
+token = process.env.TOKEN || token;
+console.log(token)
 const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
