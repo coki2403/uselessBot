@@ -1,4 +1,10 @@
 const Discord = require('discord.js');
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => res.send('Hello! :)'));
+
 const {
 	prefix,
 	token,
@@ -59,4 +65,6 @@ async function enter(message) {
         return message.channel.send(err);
     }
   }
+const port = process.env.PORT || 3000;
 
+app.listen(port, () => console.log('Server running on '+port+', http://localhost:'+port));
