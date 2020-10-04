@@ -4,15 +4,20 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => res.send('Hello! :)'));
-const {
-	prefix,
-	token,
-} = require('./auth.json');
 
-token = process.env.TOKEN || token;
+try{
+  var {
+    prefix,
+    token,
+  } = require('./auth.json');
+
+}catch(err){
+  var token = process.env.TOKEN ;
+}
+
+
+
 console.log(token)
-
-const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
 client.login(token);
