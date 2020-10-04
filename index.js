@@ -4,7 +4,6 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => res.send('Hello! :)'));
-
 const {
 	prefix,
 	token,
@@ -12,6 +11,7 @@ const {
 
 token = process.env.TOKEN || token;
 console.log(token)
+
 const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
